@@ -14,6 +14,8 @@ description: "This is a minimal example of using the bookdown package to write a
 
 # Callaghan Brain and Body Lab Manual
 
+Test change
+
 ![<!--- BABLab Logo --->](images/index/Icon.jpg){width=50% height=50%}
 
 ## Welcome
