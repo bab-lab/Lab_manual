@@ -1,5 +1,7 @@
 # Expectations and Responsibilities
 
+----------
+
 ## Everyone
 
 <h3>Big Picture</h3>
@@ -44,6 +46,8 @@ There are a few day-to-day things to keep in mind to keep the lab running smooth
 - Be on time for your meetings: respect that others have busy schedules and everyone’s time is valuable.
 - Last of all, we all have unique ways of working. I (Bridget) have written a ‘user manual’ so that you can be familiar with mine. Please read it, so that you get to know me a little better from the outset and we can avoid misunderstandings.
 
+----------
+
 ## Principal Investigator
 
 All of the above, and I will…
@@ -53,6 +57,8 @@ All of the above, and I will…
 - Be available in person and via e-mail on a regular basis, including regular meetings to discuss your research
 - Support your career development in whatever way I can (e.g., by introducing you to other researchers in the field, promoting your work at talks, writing recommendation letters for you, and letting you attend conferences as often as finances permit)
 - Help you prepare for the next step of your career, whether it’s a post-doc, a faculty job, or a job outside of academia
+
+----------
 
 ## Post-Docs
 
@@ -67,6 +73,8 @@ All of the above, and you will also be expected to…
 - Apply for grants (e.g., NRSA, K99, NARSAD). Writing grants is an excellent exercise to find direction in your research, and identify gaps in your training that you can address. It will also give you greater autonomy in the lab, will help your CV, and will help the lab (by freeing up funds, as well as providing a model for the other students to follow). Please see Bridget early about finding different grant mechanisms to apply for, and for example grants
 - Apply for jobs (academic or otherwise) when you’re ready, or after you have discussed your progress with Bridget. Postdoctoral training can lead to many different jobs, some in academia, industry and elsewhere. Any of those paths are fine with me (Bridget). Please keep me abreast of your thinking around potential jobs and I will support your career goals in whatever way I can
 
+----------
+
 ## Graduate Students
  
 All of the above, and you will also be expected to…
@@ -80,6 +88,8 @@ All of the above, and you will also be expected to…
 - Think critically about what you want for your career (academia – research or teaching, industry, science writing, something else). It is never too early to start discussing this with me (Bridget) so that we can make sure you are getting the types of training you need
 - Make sure you meet all departmental and internal lab deadlines (e.g., for your exams and thesis) -- and make sure Bridget is aware of them!
 - Prioritize time for research. Coursework and TA'ing are important, but it is research that matters for the PhD.
+
+----------
 
 ## Lab Managers
  
@@ -98,6 +108,8 @@ All of the above, and you will also be expected to…
 - Assist with the recruitment and scheduling of participants for the group project, and for the smaller projects in the lab
 - Help to manage grant budgets and startup funds
 - Monitor lab supplies (e.g., toner and paper for the printer, books for students) and order more supplies when needed
+
+----------
 
 ## Undergraduate Students
  

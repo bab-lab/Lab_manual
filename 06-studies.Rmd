@@ -1,6 +1,7 @@
 # Studies 
 
- 
+----------
+
 In the table below, we have listed the studies in the lab. 
 
 ‘Ongoing’ includes studies that are actively being collected. Studies that are done with data collection are called ‘Archival’. You can analyze these datasets during your time in the lab by approaching Bridget with a research question and coming up with an analysis plan. To see what measures are included in each study, click on the study link which will take you to a landing page describing all of the measures, or you can also log into webIRB to see the currently active IRB protocol for that project. 

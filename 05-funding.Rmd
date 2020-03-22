@@ -1,5 +1,7 @@
 # Funding
 
+----------
+
 Funding for the lab currently comes from two sources:
 
 1. Bridget’s start-up package from UCLA

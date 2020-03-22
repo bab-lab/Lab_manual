@@ -1,5 +1,7 @@
 # General Policies
 
+----------
+
 ## Hours
 
 Being physically present in lab is important. In lab you can learn from others, help others, have fast and easy access to resources (and people), and build networks with your peers and senior colleagues. While hours in academia are generally more flexible than other jobs, you should still treat it like a job. That means working 40+ hours a week if you are a full-time staff member or student. You can work from home occasionally, but not all the time, and you need to show up for all your meetings. I do expect to see everyone in lab on a regular basis, and I will be frank with you if I feel like you are not spending enough face-time in lab. To encourage lab interaction, try to be in most weekdays during ‘peak’ hours (assuming no other obligations) – e.g., between 11am and 4pm.
@@ -7,11 +9,12 @@ Being physically present in lab is important. In lab you can learn from others, 
 The only exceptions to these flexible work hours are lab managers / paid research associates, who must keep more regular hours and be in lab 5 days a week. I expect lab managers / research associates to be in about 8 hours a day, starting around 9am or 10am and ending around 5pm or 6pm. As discussed above, if you are running research participants on the weekends or after hours, I am o.k. with you coming/leaving earlier on other days of the week to compensate.
  
 Each of us has different working hours. Sometimes I (Bridget) work late at night or early in the morning. So, you can expect that you may get emails or slack messages from me at weird hours. I also expect that sometimes I might get emails or slack messages from you at unusual times of the day, or not. Please respect yourself and other people’s quirks – if you are not working, don’t check email or slack, and don’t feel pressured to respond outside of your working hours. 
+
+----------
  
 ## Noise Policy
 
 Sharing a lab space is hard as we all need a place to focus and work quietly. However, I hope that we like one another and want to chat and have fun too. No matter who is in the lab when you are in, try to respect these general guidelines:
-
 
 - Always speak in a hushed voice. Remember there are other labs near us as well and we want to be respectful of all our colleagues.
 - If someone is wearing headphones and has their ‘do not disturb’ sign up, do not disturb them.
@@ -20,10 +23,13 @@ Sharing a lab space is hard as we all need a place to focus and work quietly. Ho
 
 When the lab gets larger, or even now, you (graduate students, postdocs, undergrads, lab managers, research assistants, undergraduates) might want to organize lunchtime events. These could be where you leave the lab and sit outside as a group for lunch (a very healthy thing to do!) and do all your catching up with one another there, or where you discuss specific topics over lunch – e.g., I have seen some colleagues have fun with ‘lunch hacks’ or ‘coding circles’ where you work over coding problems together in your lunch break (allowing everyone to save up their questions for that time of the day, rather than disturb others while they are trying to work). Obviously, I will leave that up to you all, but these are some of the ways that allow for fun lab socialization without disturbing work hours.
 
+----------
  
 ## PI Office Hours
 
 In addition to weekly meetings (see below), and occasionally dropping by the lab, you can find Bridget in her office. Her door is almost always open; if it is, feel free to ask for a chat. If her door is closed, assume she is either gone, in a meeting in her office, or does not want to be disturbed – so please send a message (Slack or e-mail) rather than knocking.
+
+----------
 
 ## Meetings
 
@@ -48,7 +54,9 @@ At the beginning of each term, we will set a schedule for weekly meetings. Each 
 For full-time lab members, you should come to individual meetings prepared to talk about your career goals, your training goals, procedural aspects of your project, and your data. When we talk about your data, I suggest you bring along an R-Markdown file, or Keynote/PowerPoint that includes your raw data (e.g., histograms, scatter plots etc.) as well as any analyses that have been done, and figures produced from those analyses. This will help us to make the best use of our time and will save us digging around for data while we are meeting.
  
 Post-docs, graduate students, and lab managers should meet with their undergraduate mentee/s on a regular basis.
- 
+
+----------
+
 ## Deadlines
 
 One way of maintaining sanity in the academic work is to be as organized as possible. This is essential because disorganization doesn’t just hurt you, it hurts your collaborators and people whose help you need. When it comes to deadlines, tell your collaborators as soon as you know when a deadline is, make them a calendar reminder, and make sure you give them a friendly follow-up reminder about a week before the deadline.
@@ -56,7 +64,9 @@ One way of maintaining sanity in the academic work is to be as organized as poss
 For tasks with a hard deadline, but that don’t require a lot of time (e.g., reading/commenting on conference abstracts, filling out paperwork, etc.), please give Bridget at least a 7-day window. For tasks that require a moderate degree of work (e.g., a letter of recommendation), please give Bridget about a 3-week window (if possible). If you want feedback on research and teaching statements, or other work that requires multiple back-and-forth interactions between you and Bridget before a hard deadline, give her as much time as you can; a month or more.
  
 For manuscript submissions and revisions (i.e., which either have no deadline at all or only a weak deadline), send drafts to Bridget as soon as you have them. She will get to them as soon as she gets a chance. Feel free to follow-up if you haven’t heard anything in a few weeks.
- 
+
+----------
+
 ## Presentations
 
 Learning to present your research is important. Very few people will read your papers carefully (sad, but true) but you can reach a lot of people at conference talks and posters. Also, if you plan on staying in academia, getting a post-doc position and getting a faculty position both significantly depend on your ability to present your data. Even if you want to leave academia, presentations are likely to be an important part of your job. Additionally, every time you present your work, you are representing not just yourself but the entire lab.
@@ -66,13 +76,17 @@ It is therefore highly encouraged that you seek out opportunities to present you
 Templates for posters will be available, and you can use those as much or as little as you’d like. Some general rules for posters should be followed: minimize text as much as possible (if you wrote a paragraph, you’re doing it wrong), make figures and text large and easy to see at a distance, label your axes, and make sure different colors are easily discriminable. Other than that, go with your own style.
  
 Bridget is also happy to share slides from some of her talks if you would like to use a similar style. You’ll get a lot of feedback on your talks in any case, but other people’s slides might be helpful to you as you are setting up your talk. As with posters, feel free to go with your own style as long as it is polished and clear.
- 
+
+----------
+
 ## Recommendation Letters
  
 Letters of recommendation are extremely important for getting new positions and grants. You can count on Bridget to write you a letter if you have been in the lab at least one year (it’s hard to really know someone if they have only been around for a few months). Exceptions can be made if students or post-docs are applying for fellowships shortly after starting in the lab.
  
 If you need a letter, notify Bridget as soon as possible with the deadline (see Deadlines for guidance), your CV, and any relevant instructions for the content of the letter. If the letter is for a grant, also include your specific aims. If the letter is for a faculty position, also include your research and teaching statements. In some cases (especially if short notice is given), you may also be asked to submit a draft of a letter, which will be modified based on Bridget’s experience with you, made more glamorous (people are much too humble about themselves!), and edited to add anything you left out that Bridget thinks is important. This will ensure that the letter contains all the information you need, and that it is submitted on time.
- 
+
+----------
+
 ## Open Science
  
 We’re all for open science, so lab members are required to share their code (and eventually the data) with others. Within lab, you can share your code and data whenever and in whatever way you like. But do not share your code or data with the outside world until you think (and Bridget agrees) that the lab has finished working with it. Currently, the best option for sharing smaller datasets might be the Open Science Framework, the best option for sharing MRI datasets is OpenFMRI, and the best option for sharing microbiome data is the Sequencing Read Archive or the European Nucleotide Archive.
