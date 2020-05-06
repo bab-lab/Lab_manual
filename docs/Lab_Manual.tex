@@ -1,3 +1,6 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
 \documentclass[]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -6,31 +9,33 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage{microtype}
+\usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
 \usepackage{hyperref}
-\hypersetup{unicode=true,
+\hypersetup{
             pdftitle={BABLab Manual},
-            pdfauthor={Bridget Callaghan, Emily Towner},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
 \usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -40,12 +45,6 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -60,31 +59,10 @@
 \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
 
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{BABLab Manual}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{Bridget Callaghan, Emily Towner}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{2020-03-21}
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -94,6 +72,12 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{BABLab Manual}
+\author{}
+\date{\vspace{-2.5em}}
 
 \begin{document}
 \maketitle
@@ -114,7 +98,7 @@
 \hypertarget{welcome}{%
 \section{Welcome}\label{welcome}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 Welcome to the Brain and Body Lab at UCLA!
 
@@ -126,7 +110,7 @@ A lot of time was put into the creation of this document. Thinking about what we
 
 \emph{This lab manual is licensed under a \href{https://creativecommons.org/licenses/by-nc/4.0/}{Creative Commons Attribution - NonCommercial 4.0 International License}. If you want to make your own manual for a lab, or any other purpose, please feel free to take any ideas and inspiration for this one (and cite us), as well as from the others we have used when making this (and cite them).}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{mission-statement}{%
 \section{Mission Statement}\label{mission-statement}}
@@ -136,7 +120,7 @@ In the BABLab we aim to do good science that makes a difference. That is our mis
 \hypertarget{expectations-and-responsibilities}{%
 \chapter{Expectations and Responsibilities}\label{expectations-and-responsibilities}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{everyone}{%
 \section{Everyone}\label{everyone}}
@@ -215,7 +199,7 @@ There are a few day-to-day things to keep in mind to keep the lab running smooth
   Last of all, we all have unique ways of working. I (Bridget) have written a `user manual' so that you can be familiar with mine. Please read it, so that you get to know me a little better from the outset and we can avoid misunderstandings.
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{principal-investigator}{%
 \section{Principal Investigator}\label{principal-investigator}}
@@ -236,7 +220,7 @@ All of the above, and I will\ldots{}
   Help you prepare for the next step of your career, whether it's a post-doc, a faculty job, or a job outside of academia
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{post-docs}{%
 \section{Post-Docs}\label{post-docs}}
@@ -263,7 +247,7 @@ All of the above, and you will also be expected to\ldots{}
   Apply for jobs (academic or otherwise) when you're ready, or after you have discussed your progress with Bridget. Postdoctoral training can lead to many different jobs, some in academia, industry and elsewhere. Any of those paths are fine with me (Bridget). Please keep me abreast of your thinking around potential jobs and I will support your career goals in whatever way I can
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{graduate-students}{%
 \section{Graduate Students}\label{graduate-students}}
@@ -292,7 +276,7 @@ All of the above, and you will also be expected to\ldots{}
   Prioritize time for research. Coursework and TA'ing are important, but it is research that matters for the PhD.
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{lab-managers}{%
 \section{Lab Managers}\label{lab-managers}}
@@ -329,7 +313,7 @@ All of the above, and you will also be expected to\ldots{}
   Monitor lab supplies (e.g., toner and paper for the printer, books for students) and order more supplies when needed
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{undergraduate-students}{%
 \section{Undergraduate Students}\label{undergraduate-students}}
@@ -357,7 +341,7 @@ All of the above, and you will also be expected to\ldots{}
 \hypertarget{code-of-conduct}{%
 \chapter{Code of Conduct}\label{code-of-conduct}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{essential-policies}{%
 \section{Essential Policies}\label{essential-policies}}
@@ -366,7 +350,7 @@ Student Conduct Code
 
 UCLA has a Student Conduct Code which can be found \href{https://www.deanofstudents.ucla.edu/Individual-Student-Code}{here}. Please take the time to familiarize yourself with it before you start in the lab.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{scientific-integrity}{%
 \section{Scientific Integrity}\label{scientific-integrity}}
@@ -395,7 +379,7 @@ Old Projects
 
 If a student or post-doc drives a project and/or collects a project dataset but does not completely analyze it or write it up within 3 years after the end of data collection, Bridget may discuss with that student or post-doc handing the project off to someone who can complete it to expedite publication. If a student or post-doc no longer wishes to work on a project at any time and/or no longer wants to be an author, Bridget will re-assign the project to another individual. This policy is here to prevent data (especially expensive data, e.g., fMRI) from remaining unpublished. Remember the lab philosophy is to ``do good science that makes a difference''. We can't make a difference if research is not being disseminated.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{human-subjects-research}{%
 \section{Human Subjects Research}\label{human-subjects-research}}
@@ -411,17 +395,17 @@ Part of the training in Human Subjects research will involve reporting of incide
 \hypertarget{technology}{%
 \chapter{Technology}\label{technology}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{wiki}{%
 \section{Wiki}\label{wiki}}
 
-The lab \href{https://bab-lab.github.io/bablab/}{wiki} has all of the information you need to get started in the BABLab, including a checklist of tasks that need to be done upon arrival (onboarding), links to our studies, day-to-day housekeeping duties, examples of forms, flyers, posters that can be used as a starting point when designing your own, programming and stats tips, information about accessing Hoffman2 (the high performance computing cluster), the best places to eat and drink on and around campus, and anything else we can think of. The wiki is a living document and you can contribute to it! When you obtain information that will be useful for others to know (you found the best coffee on campus, a great website or educational resource etc.) put it on the wiki! Ask the lab manager to be added as a member of the wiki so that you can edit it.
+The lab \href{https://bablab.github.io/bablab/}{wiki} has all of the information you need to get started in the BABLab, including a checklist of tasks that need to be done upon arrival (onboarding), links to our studies, day-to-day housekeeping duties, examples of forms, flyers, posters that can be used as a starting point when designing your own, programming and stats tips, information about accessing Hoffman2 (the high performance computing cluster), the best places to eat and drink on and around campus, and anything else we can think of. The wiki is a living document and you can contribute to it! When you obtain information that will be useful for others to know (you found the best coffee on campus, a great website or educational resource etc.) put it on the wiki! Ask the lab manager to be added as a member of the wiki so that you can edit it.
 
 \hypertarget{general-policies}{%
 \chapter{General Policies}\label{general-policies}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{hours}{%
 \section{Hours}\label{hours}}
@@ -432,7 +416,7 @@ The only exceptions to these flexible work hours are lab managers / paid researc
 
 Each of us has different working hours. Sometimes I (Bridget) work late at night or early in the morning. So, you can expect that you may get emails or slack messages from me at weird hours. I also expect that sometimes I might get emails or slack messages from you at unusual times of the day, or not. Please respect yourself and other people's quirks -- if you are not working, don't check email or slack, and don't feel pressured to respond outside of your working hours.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{noise-policy}{%
 \section{Noise Policy}\label{noise-policy}}
@@ -453,14 +437,14 @@ Sharing a lab space is hard as we all need a place to focus and work quietly. Ho
 
 When the lab gets larger, or even now, you (graduate students, postdocs, undergrads, lab managers, research assistants, undergraduates) might want to organize lunchtime events. These could be where you leave the lab and sit outside as a group for lunch (a very healthy thing to do!) and do all your catching up with one another there, or where you discuss specific topics over lunch -- e.g., I have seen some colleagues have fun with `lunch hacks' or `coding circles' where you work over coding problems together in your lunch break (allowing everyone to save up their questions for that time of the day, rather than disturb others while they are trying to work). Obviously, I will leave that up to you all, but these are some of the ways that allow for fun lab socialization without disturbing work hours.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{pi-office-hours}{%
 \section{PI Office Hours}\label{pi-office-hours}}
 
 In addition to weekly meetings (see below), and occasionally dropping by the lab, you can find Bridget in her office. Her door is almost always open; if it is, feel free to ask for a chat. If her door is closed, assume she is either gone, in a meeting in her office, or does not want to be disturbed -- so please send a message (Slack or e-mail) rather than knocking.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{meetings}{%
 \section{Meetings}\label{meetings}}
@@ -489,7 +473,7 @@ For full-time lab members, you should come to individual meetings prepared to ta
 
 Post-docs, graduate students, and lab managers should meet with their undergraduate mentee/s on a regular basis.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{deadlines}{%
 \section{Deadlines}\label{deadlines}}
@@ -500,7 +484,7 @@ For tasks with a hard deadline, but that don't require a lot of time (e.g., read
 
 For manuscript submissions and revisions (i.e., which either have no deadline at all or only a weak deadline), send drafts to Bridget as soon as you have them. She will get to them as soon as she gets a chance. Feel free to follow-up if you haven't heard anything in a few weeks.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{presentations}{%
 \section{Presentations}\label{presentations}}
@@ -513,7 +497,7 @@ Templates for posters will be available, and you can use those as much or as lit
 
 Bridget is also happy to share slides from some of her talks if you would like to use a similar style. You'll get a lot of feedback on your talks in any case, but other people's slides might be helpful to you as you are setting up your talk. As with posters, feel free to go with your own style as long as it is polished and clear.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{recommendation-letters}{%
 \section{Recommendation Letters}\label{recommendation-letters}}
@@ -522,7 +506,7 @@ Letters of recommendation are extremely important for getting new positions and 
 
 If you need a letter, notify Bridget as soon as possible with the deadline (see Deadlines for guidance), your CV, and any relevant instructions for the content of the letter. If the letter is for a grant, also include your specific aims. If the letter is for a faculty position, also include your research and teaching statements. In some cases (especially if short notice is given), you may also be asked to submit a draft of a letter, which will be modified based on Bridget's experience with you, made more glamorous (people are much too humble about themselves!), and edited to add anything you left out that Bridget thinks is important. This will ensure that the letter contains all the information you need, and that it is submitted on time.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{open-science}{%
 \section{Open Science}\label{open-science}}
@@ -534,7 +518,7 @@ We will also share our work with the world as soon as we ready, which means prep
 \hypertarget{funding}{%
 \chapter{Funding}\label{funding}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 Funding for the lab currently comes from two sources:
 
@@ -556,7 +540,7 @@ Relatedly, you should feel free to read grants Bridget has submitted, whether th
 \hypertarget{studies}{%
 \chapter{Studies}\label{studies}}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 In the table below, we have listed the studies in the lab.
 
@@ -570,12 +554,12 @@ Study Name & Parent Grant(s) & IRB \# & Status\tabularnewline
 \midrule
 \endhead
 Mind, Brain, Body (MBB) & NIMH R00 & 19-001217 & Ongoing\tabularnewline
-EGG and Emotionality & Startup & 20-000295 & Ongoing\tabularnewline
+Parenting Under Pressure (PUP) & Startup & 20-000735 & Ongoing\tabularnewline
+Inside Out & Startup & 20-000295 & Ongoing\tabularnewline
 Transfer Mental Health & PROPS & 19-002273 & Ongoing\tabularnewline
 \bottomrule
 \end{longtable}
 
 \bibliography{book.bib,packages.bib}
-
 
 \end{document}

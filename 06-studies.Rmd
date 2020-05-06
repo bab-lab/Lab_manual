@@ -11,5 +11,6 @@ If you are writing a paper on one of these studies, you will need to cite the Pa
 | Study Name              | Parent Grant(s) | IRB #     | Status  |
 | ----------------------- | --------------- | --------- | ------- |
 | Mind, Brain, Body (MBB) | NIMH R00        | 19-001217 | Ongoing |
-| EGG and Emotionality    | Startup         | 20-000295 | Ongoing |
+| Parenting Under Pressure (PUP) | Startup | 20-000735  | Ongoing
+| Inside Out   | Startup         | 20-000295 | Ongoing |
 | Transfer Mental Health  | PROPS           | 19-002273 | Ongoing |
