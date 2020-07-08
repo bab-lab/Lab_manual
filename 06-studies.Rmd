@@ -16,3 +16,5 @@ If you are writing a paper on one of these studies, you will need to cite the Pa
 | Transfer Mental Health  | PROPS           | 19-002273 | Ongoing |------- |
 | Memory Plasticity  | -------           | 20-001310 | DUA Columbia University |------- |
 | Categorical Memory Retention in Adulthood  | -------           | 20-007101 | DUA Columbia University |------- |
+| Emotional Learning for Kids  | -------           | 19-002284  | DUA Columbia University |------- |
+| Emotional Eavesdropping in Toddlers  | -------           | 20-000002 | DUA Columbia University |------- |
