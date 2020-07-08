@@ -8,9 +8,11 @@ In the table below, we have listed the studies in the lab.
 
 If you are writing a paper on one of these studies, you will need to cite the Parent Grant/s used for that study (you should also ask your collaborators if they have any fellowships that they would like listed).
 
-| Study Name              | Parent Grant(s) | IRB #     | Status  |
-| ----------------------- | --------------- | --------- | ------- |
-| Mind, Brain, Body (MBB) | NIMH R00        | 19-001217 | Ongoing |
-| Parenting Under Pressure (PUP) | Startup | 20-000735  | Ongoing
-| Inside Out   | Startup         | 20-000295 | Ongoing |
-| Transfer Mental Health  | PROPS           | 19-002273 | Ongoing |
+| Study Name              | Parent Grant(s) | IRB #     | Status  | Wiki |
+| ----------------------- | --------------- | --------- | ------- | ------- |
+| Mind, Brain, Body (MBB) | NIMH R00        | 19-001217 | Ongoing | [wiki](https://bablab.github.io/wiki_mind_brain_body/) |
+| Parenting Under Pressure (PUP) | Startup | 20-000735  | Ongoing | [wiki](https://bablab.github.io/wiki_parenting_under_pressure/) |
+| Inside Out   | Startup         | 20-000295 | Ongoing | [wiki](https://bablab.github.io/wiki_inside_out/) |
+| Transfer Mental Health  | PROPS           | 19-002273 | Ongoing |------- |
+| Memory Plasticity  | -------           | 20-001310 | DUA Columbia University |------- |
+| Categorical Memory Retention in Adulthood  | -------           | 20-007101 | DUA Columbia University |------- |
