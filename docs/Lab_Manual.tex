@@ -1,41 +1,54 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={BABLab Manual},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={BABLab Manual},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -45,25 +58,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -131,7 +133,7 @@ We in the BABLab value the diversity of our lab members and research participant
   If you are a junior or senior in Psychology at UCLA, consider applying to the PROPS program for a research intensive experience. \url{https://www.psych.ucla.edu/undergraduate/special-programs-and-events/psychology-research-opportunities-programs/props-application}
 \item
   Diversity focused lab meetings.
-  Across the Summer of 2020 we are trialing a new format of lab meeting focused on diversity in academia. These will be meetings where we amplify black and brown voices and discuss issues of race and racism in science and academia. In Fall 2020 we will discuss how we think this meeting has gone across the Summer and what we can do to make it better.
+  Across the Summer of 2020 we trailed a new format of lab meeting focused on diversity in academia. These are be meetings where we amplify black and brown voices and discuss issues of race and racism in science and academia. Going forward in 2020 and into 2021, we are making a commitment to be mindful of the diversity of samples in papers that we review and to think about how sample diversity and the questions that were asked influence findings.
 \item
   Engaging in more Community Based Participatory Research.
   It is our mission in the BABLab to make a difference in people's lives through the work we do. It is hard for our work to make a difference when the community is not actively involved in the research process from start through finish, not as `subjects' or `participants', but as partners. We have been working on creating lasting and meaningful community partnerships since our inception in 2019. As a concrete step forward in this same direction, we commit to including a timeline and dedicated funds to establish a Community Advisory Board for all future community facing grants.
@@ -190,18 +192,23 @@ Small Picture
 
 There are a few day-to-day things to keep in mind to keep the lab running smoothly.
 
+\textbf{Special considerations for virtual format during the covid-19 pandemic}
+
 \begin{itemize}
-\tightlist
 \item
-  If you're sick, please stay home and take care of yourself. Just email the lab manager or me (Bridget) to tell us. Because you need it, and also because others don't need to get sick.
+  The lab is now collecting data online. Please be aware of what you are wearing in the online environment and make sure that it is respectable and that your surroundings are respectable.For instance, if you are with participants, you should be in a non distracting background. We understand that you can't choose where you're working from at this time, so please do this within the constraints of your individual situation.
+\item
+  When we do have a common lab space in which we meet, it is even more important to check slack and email on a regular basis and be available to respond to messages, set up virtual meetings, etc.
+\item
+  If you're sick, please take time off, stay home (if we are in person), and take care of yourself. Just email the lab manager or me (Bridget) to tell us. Because you need it, and also because others don't need to get sick.
 \item
   If you know you might be sick, e.g., you have a minor surgery and don't know how well you will recover, play it safe and reschedule your appointments ahead of time.
 \item
-  Working in developmental populations means that work times need to be flexible. If you are collecting data or recruiting participants, you may be expected to come into the lab on weekends and holidays. We will make a schedule to share that burden as evenly as possible. When you collect data or recruit participants outside of work hours, I expect that you will take some time off during work hours to compensate.
+  Working in developmental populations means that work times need to be flexible. If you are collecting data or recruiting participants, you may be expected to work on weekends and holidays. We will make a schedule to share that burden as evenly as possible. When you collect data or recruit participants outside of work hours, I expect that you will take some time off during work hours to compensate.
 \item
-  Outside of data collection and recruitment, you are not expected to come into the lab on weekends or holidays, and you are not expected to stay late at night.
+  Outside of data collection and recruitment, you are not expected to work or come into the lab (if we are in person) on weekends or holidays, and you are not expected to stay late at night.
 \item
-  You are expected to get your work done to a high standard and you can do that in whatever time of day best suits you and your work style. That being said, being in lab some of the time is important for the lab, and for morale, so you shouldn't work remotely all of the time. (Note: the lab manager is expected to keep more regular hours than other lab members: 8am-5pm, 9am-6pm, 10am-7pm are all reasonable work hours for a lab manager).
+  You are expected to get your work done to a high standard and you can do that in whatever time of day best suits you and your work style. That being said, being in lab some of the time is important for the lab, and for morale, so you shouldn't work remotely all of the time (unless we are in a pandemic). (Note: the lab manager is expected to keep more regular hours than other lab members: 8am-5pm, 9am-6pm, 10am-7pm are all reasonable work hours for a lab manager).
 \item
   All grad students, post-docs, and paid employees (e.g., lab managers, research associates, and technicians) are expected to attend lab meetings when their schedules allow. We will set a time for the lab meeting each term that best fits everyone's schedule.
 \item
@@ -338,8 +345,48 @@ All of the above, and you will also be expected to\ldots{}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{undergraduate-students}{%
-\section{Undergraduate Students}\label{undergraduate-students}}
+\hypertarget{senior-research-assistants}{%
+\section{Senior Research Assistants}\label{senior-research-assistants}}
+
+All of the above, and you will also be expected to\ldots{}
+
+\begin{itemize}
+\tightlist
+\item
+  Help collect data for the lab's projects
+\item
+  Recruitment?
+\item
+  Participant follow-up?
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{enrolled-research-intern}{%
+\section{Enrolled Research Intern}\label{enrolled-research-intern}}
+
+All of the above, and you will also be expected to\ldots{}
+
+\begin{itemize}
+\tightlist
+\item
+  Develop your own research project in the lab
+\item
+  Complete your work in a timely manner and make sure you back up your work, and file it appropriately within the lab server (generally, until you have final versions, this will be in your user folder on Box).
+\item
+  Make sure that your work is accessible to anyone. That is, comment your code, name files appropriately (see wiki for lab file naming conventiosn), document all aspects of your project, and create a wiki with all important information.\\
+\item
+  Meet regularly with Bridget or whoever is your assigned mentor to discuss your project
+\item
+  Attend lab meetings and RA meetings when it fits your schedule and if you have interest
+\item
+  Once you have finalized a piece of work (e.g., script, wiki), send it to the lab manager for approval. Once it has been approved, the lab manager will copy it to main study folder on Box.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{research-assistants}{%
+\section{Research Assistants}\label{research-assistants}}
 
 All of the above, and you will also be expected to\ldots{}
 
@@ -357,6 +404,8 @@ All of the above, and you will also be expected to\ldots{}
   Develop your weekly schedule by talking to your graduate student mentor or your post-doc mentor. You should be coming in every week, and scheduling enough time to get your work done
 \item
   Attend lab meetings when it fits your schedule and if you have interest
+\item
+  Attend RA meetings
 \item
   Keep a log of the work you did in the lab, the dates you were in the lab, and the hours you worked. Send this to your lab mentor when you finish up in the lab. They will use this to write you a letter of reference
 \end{itemize}
@@ -415,15 +464,12 @@ If you are starting your own project, you will be expected to write your own IRB
 
 Part of the training in Human Subjects research will involve reporting of incidental or unexpected events. If a participant falls ill, becomes very upset, has an accident with the lab equipment, is injured, or otherwise adversely affected by participating in the study, tell Bridget so that we can report this information to the IRB and/or specific funding agencies.
 
-\hypertarget{technology}{%
-\chapter{Technology}\label{technology}}
+\hypertarget{lab-wiki}{%
+\chapter{Lab Wiki}\label{lab-wiki}}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{wiki}{%
-\section{Wiki}\label{wiki}}
-
-The lab \href{https://bablab.github.io/bablab/}{wiki} has all of the information you need to get started in the BABLab, including a checklist of tasks that need to be done upon arrival (onboarding), links to our studies, day-to-day housekeeping duties, examples of forms, flyers, posters that can be used as a starting point when designing your own, programming and stats tips, information about accessing Hoffman2 (the high performance computing cluster), the best places to eat and drink on and around campus, and anything else we can think of. The wiki is a living document and you can contribute to it! When you obtain information that will be useful for others to know (you found the best coffee on campus, a great website or educational resource etc.) put it on the wiki! Ask the lab manager to be added as a member of the wiki so that you can edit it.
+The lab \href{https://bablab.github.io/wiki_bablab/}{wiki} has all of the information you need to function as a member of the BABLab, including a checklist of tasks that need to be done upon arrival (onboarding), links to our studies, day-to-day housekeeping duties, examples of forms, flyers, posters that can be used as a starting point when designing your own, programming and stats tips, important data management information, the best places to eat and drink on and around campus, and anything else we can think of. The wiki is a living document and you can contribute to it! When you obtain information that will be useful for others to know (you found the best coffee on campus, a great website or educational resource etc.) put it on the wiki! Ask the lab manager to be added as a member of the wiki so that you can edit it.
 
 \hypertarget{general-policies}{%
 \chapter{General Policies}\label{general-policies}}
@@ -475,7 +521,7 @@ In addition to weekly meetings (see below), and occasionally dropping by the lab
 \hypertarget{weekly-lab-meetings}{%
 \subsection{Weekly Lab Meetings}\label{weekly-lab-meetings}}
 
-It is my expectation that all lab members are aware of what each other are working on. In knowing (and taking interest in what your lab mates are working on) it will make it feel like a lab community, rather than a bunch of people collaborating one-on-one with the PI. One of the forums where we can learn about each other's work is in weekly lab meetings. These lab meetings will be approximately 1.5 hours and will involve a group project troubleshoot (\textasciitilde{}15-30 minutes), and a goal blitz for the week or month ahead (\textless{}5 minutes per person). For the remaining 30-45 minutes of the lab meeting we will have different approaches depending on the amount of data and the stage of current projects. To begin with, while the Mind, Brain Body study is getting setup, one option (Thematic Learning option) is to have each of the core lab members taking turns to create a syllabus for a journal club that will occur over the next month (4 weeks). When the lab has some data to work on, we might begin to transition to a mix of Thematic Learning and Works in Progress. Works in Progress simply means that students take time to present their analyses or projects.
+It is my expectation that all lab members are aware of what each other are working on. In knowing (and taking interest in what your lab mates are working on) it will make it feel like a lab community, rather than a bunch of people collaborating one-on-one with the PI. One of the forums where we can learn about each other's work is in weekly lab meetings. These lab meetings will be approximately 1.5 hours and will involve a group project troubleshoot (\textasciitilde15-30 minutes), and a goal blitz for the week or month ahead (\textless5 minutes per person). For the remaining 30-45 minutes of the lab meeting we will have different approaches depending on the amount of data and the stage of current projects. To begin with, while the Mind, Brain Body study is getting setup, one option (Thematic Learning option) is to have each of the core lab members taking turns to create a syllabus for a journal club that will occur over the next month (4 weeks). When the lab has some data to work on, we might begin to transition to a mix of Thematic Learning and Works in Progress. Works in Progress simply means that students take time to present their analyses or projects.
 
 The group project troubleshoot will involve us working through problems that relate to the large group project (at this stage, the large group project is Growing Brains and Bodies project, funded through Bridget's R00). As all lab members contribute to data collection for that project, we will talk about procedural issues like recruitment, planning the next wave of data collection etc. Troubleshooting for smaller individual projects will occur during one-and-one meetings with the PI (see below) and during the WIP session.
 
@@ -604,7 +650,7 @@ Startup\strut
 \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
 20-000735\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-Ongoing\strut
+Closed to Enrollment\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
 \href{https://bablab.github.io/wiki_parenting_under_pressure/}{wiki}\strut
 \end{minipage}\tabularnewline
@@ -626,9 +672,31 @@ PROPS\strut
 \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
 19-002273\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-Ongoing\strut
+Closed to Enrollment\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
 -------\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.32\columnwidth}\raggedright
+Stress \& Early Childhood Microbiome Development\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+\href{http://www.gusto.sg/}{GUSTO} Study\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+-----\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+Data Analysis\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+\href{https://bablab.github.io/wiki_gusto/}{wiki}\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.32\columnwidth}\raggedright
+Call4Growth\strut
+\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+PROPS\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
+------\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+--------\strut
+\end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
+-----\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.32\columnwidth}\raggedright
 Memory Plasticity\strut
@@ -648,7 +716,7 @@ Categorical Memory Retention in Adulthood\strut
 \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
 20-007101\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-DUA Columbia University\strut
+Ongoing\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
 -------\strut
 \end{minipage}\tabularnewline
@@ -677,6 +745,6 @@ DUA Columbia University\strut
 \bottomrule
 \end{longtable}
 
-\bibliography{book.bib,packages.bib}
+  \bibliography{book.bib,packages.bib}
 
 \end{document}
