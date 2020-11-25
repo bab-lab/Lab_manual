@@ -9,7 +9,7 @@ post-docs
 graduate-students
 lab-managers
 senior-research-assistants
-enrolled-research-intern
+enrolled-research-interns
 research-assistants
 code-of-conduct
 essential-policies
