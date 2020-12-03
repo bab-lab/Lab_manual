@@ -33,9 +33,11 @@ There are a few day-to-day things to keep in mind to keep the lab running smooth
 **Special considerations for virtual format during the covid-19 pandemic**
 
 - The lab is now collecting data online. Please be aware of what you are wearing in the online environment and make sure that it is respectable and that your surroundings are respectable.For instance, if you are with participants, you should be in a non distracting background. We understand that you can’t choose where you’re working from at this time, so please do this within the constraints of your individual situation.
-- When we do have a common lab space in which we meet, it is even more important to check slack and email on a regular basis and be available to respond to messages, set up virtual meetings, etc. 
+- When we don't have a common lab space in which we meet, it is even more important to check slack and email on a regular basis and be available to respond to messages, set up virtual meetings, etc. 
  
-- If you’re sick, please take time off, stay home (if we are in person), and take care of yourself. Just email the lab manager or me (Bridget) to tell us. Because you need it, and also because others don’t need to get sick.
+ **General**:
+ 
+- If you’re sick, please take time off, stay home (if we are in person), and take care of yourself. Just slack the lab manager or me (Bridget) to tell us. Because you need it, and also because others don’t need to get sick.
 - If you know you might be sick, e.g., you have a minor surgery and don’t know how well you will recover, play it safe and reschedule your appointments ahead of time.
 - Working in developmental populations means that work times need to be flexible. If you are collecting data or recruiting participants, you may be expected to work on weekends and holidays. We will make a schedule to share that burden as evenly as possible. When you collect data or recruit participants outside of work hours, I expect that you will take some time off during work hours to compensate.
 - Outside of data collection and recruitment, you are not expected to work or come into the lab (if we are in person) on weekends or holidays, and you are not expected to stay late at night.
@@ -58,7 +60,7 @@ All of the above, and I will…
 
 - Support your scientific development and be responsive to your emotional needs
 - Give you feedback on a timely basis, including feedback on project ideas, conference posters, talks, manuscripts, figures, grants
-- Be available in person and via e-mail on a regular basis, including regular meetings to discuss your research
+- Be available in person and via slack on a regular basis, including regular meetings to discuss your research
 - Support your career development in whatever way I can (e.g., by introducing you to other researchers in the field, promoting your work at talks, writing recommendation letters for you, and letting you attend conferences as often as finances permit)
 - Help you prepare for the next step of your career, whether it’s a post-doc, a faculty job, or a job outside of academia
 
@@ -100,6 +102,7 @@ All of the above, and you will also be expected to…
 All of the above, and you will also be expected to…
 
 - Collect data for the ongoing group projects in the lab
+- Manage the lab's data backup and ensure backups are done on a consistent basis
 - Work on your own research (developed with Bridget’s help) that will either be a review paper, analysis of an existing data set, a study within the group project, or another project that sits outside the group project
 - Create research and lab protocols
 - Train new lab members on the research and lab protocols
