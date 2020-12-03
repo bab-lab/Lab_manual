@@ -1,54 +1,41 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[
-]{book}
+\documentclass[]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
-% Use upquote if available, for straight quotes in verbatim environments
+% use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
 \hypersetup{
-  pdftitle={BABLab Manual},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
+            pdftitle={BABLab Manual},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 \usepackage{longtable,booktabs}
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -58,14 +45,25 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -199,10 +197,10 @@ There are a few day-to-day things to keep in mind to keep the lab running smooth
 \item
   The lab is now collecting data online. Please be aware of what you are wearing in the online environment and make sure that it is respectable and that your surroundings are respectable.For instance, if you are with participants, you should be in a non distracting background. We understand that you can't choose where you're working from at this time, so please do this within the constraints of your individual situation.
 \item
-  When we do have a common lab space in which we meet, it is even more important to check slack and email on a regular basis and be available to respond to messages, set up virtual meetings, etc.
+  When we don't have a common lab space in which we meet, it is even more important to check slack and email on a regular basis and be available to respond to messages, set up virtual meetings, etc.
 \end{itemize}
 
-\textbf{general}:
+\textbf{General}:
 
 \begin{itemize}
 \tightlist
@@ -366,7 +364,7 @@ All of the above, and you will also be expected to\ldots{}
 \item
   Recruit new participants for the lab's research
 \item
-  Handle communication with enrolled participants, including scheduling, reminders, session confirmations, etc.
+  Handle communication with enrolled participants, including scheduling, reminders, session confirmations, maintaining participant records etc.
 \item
   Attend lab meetings and/or RA meetings when it fits your schedule and if you have interest
 \item
@@ -538,7 +536,7 @@ In addition to weekly meetings (see below), Bridget will host open office hours 
 \hypertarget{weekly-lab-meetings}{%
 \subsection{Weekly Lab Meetings}\label{weekly-lab-meetings}}
 
-It is my expectation that all lab members are aware of what each other are working on. In knowing (and taking interest in what your lab mates are working on) it will make it feel like a lab community, rather than a bunch of people collaborating one-on-one with the PI. One of the forums where we can learn about each other's work is in weekly lab meetings. These lab meetings will be approximately 1 hour and may involve a group project troubleshoot (\textasciitilde15-30 minutes), and a goal blitz for the week or month ahead (\textless5 minutes per person) at the start of the meeting. For the remaining time in the lab meeting, we will have different approaches depending on the amount of data and the stage of current projects. To begin with, while the Mind, Brain Body study is getting setup, one option (Thematic Learning option) is to define an area of interest that the lab wants to learn more about at the start of the term, and then have lab members present on articles on their choosing that focus on the agreed-upon themes in a journal club style. When the lab has some data to work on, we might begin to transition to a mix of Thematic Learning and Works in Progress. Works in Progress simply means that students take time to present their analyses or projects.
+It is my expectation that all lab members are aware of what each other are working on. In knowing (and taking interest in what your lab mates are working on) it will make it feel like a lab community, rather than a bunch of people collaborating one-on-one with the PI. One of the forums where we can learn about each other's work is in weekly lab meetings. These lab meetings will be approximately 1 hour and may involve a group project troubleshoot (\textasciitilde{}15-30 minutes), and a goal blitz for the week or month ahead (\textless{}5 minutes per person) at the start of the meeting. For the remaining time in the lab meeting, we will have different approaches depending on the amount of data and the stage of current projects. To begin with, while the Mind, Brain Body study is getting setup, one option (Thematic Learning option) is to define an area of interest that the lab wants to learn more about at the start of the term, and then have lab members present on articles on their choosing that focus on the agreed-upon themes in a journal club style. When the lab has some data to work on, we might begin to transition to a mix of Thematic Learning and Works in Progress. Works in Progress simply means that students take time to present their analyses or projects.
 
 The group project troubleshoot will involve us working through problems that relate to the large group project (at this stage, the large group project is Growing Brains and Bodies project, funded through Bridget's R00). As all lab members contribute to data collection for that project, we will talk about procedural issues like recruitment, planning the next wave of data collection etc. Troubleshooting for smaller individual projects will occur during one-and-one meetings with the PI (see below) and during the WIP session.
 
@@ -615,6 +613,10 @@ Funding for the lab currently comes from two sources:
   Bridget's start-up package from UCLA
 \item
   Bridget's NIMH R00
+\item
+  Bridget's Faculty Career Development Award
+\item
+  Bridget's NARSAD grant (transferred from Columbia)
 \end{enumerate}
 
 Hopefully more money is on its way! The lab manager/s will be responsible for the day-to-day purchasing of items for the lab, however, larger items will be reviewed and approved by Bridget. It might seem like there is a lot of money in the grants (e.g., more than any one of us might have in our bank account at a given time), but after it has paid for everyone's salaries, all of the participants, scanning etc., there is not a lot left over and it has to stretch for many years. Moreover, it is not clear from where and when the next pot of money will arrive. For this reason, try to engage in the practice of frugality in the lab. Recycle paper, be careful with ordering (e.g., only order what you will likely use before an expiry date), etc. If you see us being wasteful and can think of a way to change that, please let us know.
@@ -678,7 +680,7 @@ Startup\strut
 \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
 20-000295\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
-Ongoing\strut
+Data Analysis\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
 \href{https://bablab.github.io/wiki_inside_out/}{wiki}\strut
 \end{minipage}\tabularnewline
@@ -709,7 +711,7 @@ Call4Growth\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
 PROPS\strut
 \end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\raggedright
-------\strut
+20-001988\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
 Ongoing\strut
 \end{minipage} & \begin{minipage}[t]{0.10\columnwidth}\raggedright
@@ -762,6 +764,6 @@ DUA Columbia University\strut
 \bottomrule
 \end{longtable}
 
-  \bibliography{book.bib,packages.bib}
+\bibliography{book.bib,packages.bib}
 
 \end{document}
