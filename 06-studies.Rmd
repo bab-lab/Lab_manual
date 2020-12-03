@@ -12,10 +12,10 @@ If you are writing a paper on one of these studies, you will need to cite the Pa
 | ----------------------- | --------------- | --------- | ------- | ------- |
 | Mind, Brain, Body (MBB) | NIMH R00        | 19-001217 | Ongoing | [wiki](https://bablab.github.io/wiki_mind_brain_body/) |
 | Parenting Under Pressure (PUP) | Startup | 20-000735  | Closed to Enrollment | [wiki](https://bablab.github.io/wiki_parenting_under_pressure/) |
-| Inside Out   | Startup         | 20-000295 | Ongoing | [wiki](https://bablab.github.io/wiki_inside_out/) |
+| Inside Out   | Startup         | 20-000295 | Data Analysis | [wiki](https://bablab.github.io/wiki_inside_out/) |
 | Transfer Mental Health  | PROPS           | 19-002273 | Closed to Enrollment | [wiki](https://bablab.github.io/wiki_transfer_mental_health/) | 
 | Stress & Early Childhood Microbiome Development | [GUSTO Study](http://www.gusto.sg/) |-----| Data Analysis | [wiki](https://bablab.github.io/wiki_gusto/)
-| Call4Growth | PROPS           | ------ | Ongoing | -----|
+| Call4Growth | PROPS           | 20-001988 | Ongoing | -----|
 | Memory Plasticity  | -------           | 20-001310 | DUA Columbia University |------- |
 | Categorical Memory Retention in Adulthood  | -------           | 20-007101 | Ongoing |------- |
 | Emotional Learning for Kids  | -------           | 19-002284  | DUA Columbia University |------- |
