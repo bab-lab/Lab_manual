@@ -115,6 +115,7 @@ All of the above, and you will also be expected to…
 - Assist with the recruitment and scheduling of participants for the group project, and for the smaller projects in the lab
 - Help to manage grant budgets and startup funds
 - Monitor lab supplies (e.g., toner and paper for the printer, books for students) and order more supplies when needed
+- Ensure that lab computers are never updated in the middle of a study
 
 ----------
 
