@@ -119,20 +119,6 @@ All of the above, and you will also be expected to…
 
 ----------
 
-
-## Senior Research Assistants
-
-All of the above, and you will also be expected to…
-
-- Help collect data for the lab's projects, including running participant sessions
-- Recruit new participants for the lab's research
-- Handle communication with enrolled participants, including scheduling, reminders, session confirmations, maintaining participant records etc. 
-- Attend lab meetings and/or RA meetings when it fits your schedule and if you have interest
-- Attend a weekly meeting with the lab manager and all SRAs
-- Update the Availability calendar and communicate with the lab manager regarding your schedule for lab work and availability for participant sessions
-
-----------
-
 ## Enrolled Research Interns
 
 All of the above, and you will also be expected to…
@@ -159,3 +145,18 @@ All of the above, and you will also be expected to…
 - Attend lab meetings when it fits your schedule and if you have interest
 - Attend RA meetings
 - Keep a log of the work you did in the lab, the dates you were in the lab, and the hours you worked. Send this to your lab mentor when you finish up in the lab. They will use this to write you a letter of reference
+
+----------
+
+
+## Senior Research Assistants
+
+All of the above, and you will also be expected to…
+
+- Help collect data for the lab's projects, including running participant sessions
+- Recruit new participants for the lab's research
+- Handle communication with enrolled participants, including scheduling, reminders, session confirmations, maintaining participant records etc. 
+- Attend lab meetings and/or RA meetings when it fits your schedule and if you have interest
+- Attend a weekly meeting with the lab manager and all SRAs
+- Update the Availability calendar and communicate with the lab manager regarding your schedule for lab work and availability for participant sessions
+
