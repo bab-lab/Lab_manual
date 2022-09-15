@@ -33,13 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={BABLab Manual},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -80,6 +73,13 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={BABLab Manual},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{BABLab Manual}
 \author{}
@@ -128,7 +128,7 @@ In the BABLab we aim to do good science that makes a difference. That is our mis
 \hypertarget{diversity-commitment}{%
 \section{Diversity Commitment}\label{diversity-commitment}}
 
-We in the BABLab value the diversity of our lab members and research participants. We take seriously our role as allies for Indigenous, Black, and Communities of Color, and are committed to learn, understand, and dismantle systems of oppression, particularly in academia. You are welcome in this lab whatever the color of your skin, your sexual orientation, and your gender identity. Read on for some of the concrete steps we are taking in the lab to address racism and encourage diversity in the 2020-2021 academic year.
+We in the BABLab value the diversity of our lab members and research participants. We take seriously our role as allies for Indigenous, Black, and Communities of Color, and are committed to learn, understand, and dismantle systems of oppression, particularly in academia. You are welcome in this lab whatever the color of your skin, your sexual orientation, your gender identity, your nationality, your ability, and your culture. Read on for some of the concrete steps we are taking in the lab to address racism and encourage diversity in the 2020-2021 academic year.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -650,7 +650,7 @@ If you are writing a paper on one of these studies, you will need to cite the Pa
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1304}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1014}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1014}}@{}}
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Study Name
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -662,7 +662,7 @@ Status
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Wiki
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 Mind, Brain, Body (MBB) - The Mind, Brain, Body study looks at how early caregiving experiences influence emotional, cognitive, and brain development, as well as physical health and wellness. & NIMH R00 & 19-001217 & Ongoing & \href{https://bablab.github.io/wiki_mind_brain_body/}{wiki} \\
 Parenting Under Pressure (PUP) - This study seeks to explore the ways in which the COVID-19 outbreak has specifically influenced caregivers, children, and families. & Startup & 20-000735 & Closed to Enrollment & \href{https://bablab.github.io/wiki_parenting_under_pressure/}{wiki} \\
@@ -674,7 +674,7 @@ Memory Plasticity & Bridget Postdoc Study & 20-001310 & DUA Columbia University 
 Categorical Memory Retention in Adulthood & Bridget Postdoc Study & 20-007101 & Ongoing & ------- \\
 Emotional Learning for Kids & Bridget Postdoc Study & 19-002284 & DUA Columbia University & ------- \\
 Emotional Eavesdropping in Toddlers & Bridget Postdoc Study & 20-000002 & DUA Columbia University & ------- \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 \hypertarget{helpful-information}{%
@@ -720,7 +720,7 @@ Conferences are a great way to practice presenting your work and meet new people
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1447}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3553}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3421}}@{}}
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Conference
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -730,13 +730,13 @@ Approx. Abstract Deadline
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Approx. Conference Month
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 SRCD & Biennial & September & March \\
 ISDP & Annual & August & November \\
 SAS & Annual & November & March-April \\
 Flux & Annual & March & September \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
   \bibliography{book.bib,packages.bib}
