@@ -1,42 +1,56 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={BABLab Manual},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
-\usepackage{graphicx,grffile}
+  pdftitle={BABLab Manual},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -45,25 +59,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -72,6 +75,9 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
@@ -538,7 +544,7 @@ In addition to weekly meetings (see below), Bridget will host open office hours 
 \hypertarget{weekly-lab-meetings}{%
 \subsection{Weekly Lab Meetings}\label{weekly-lab-meetings}}
 
-It is my expectation that all lab members are aware of what each other are working on. In knowing (and taking interest in what your lab mates are working on) it will make it feel like a lab community, rather than a bunch of people collaborating one-on-one with the PI. One of the forums where we can learn about each other's work is in weekly lab meetings. These lab meetings will be approximately 1 hour and may involve a group project troubleshoot (\textasciitilde{}15-30 minutes), and a goal blitz for the week or month ahead (\textless{}5 minutes per person) at the start of the meeting. For the remaining time in the lab meeting, we will have different approaches depending on the amount of data and the stage of current projects. To begin with, while the Mind, Brain Body study is getting setup, one option (Thematic Learning option) is to define an area of interest that the lab wants to learn more about at the start of the term, and then have lab members present on articles on their choosing that focus on the agreed-upon themes in a journal club style. When the lab has some data to work on, we might begin to transition to a mix of Thematic Learning and Works in Progress. Works in Progress simply means that students take time to present their analyses or projects.
+It is my expectation that all lab members are aware of what each other are working on. In knowing (and taking interest in what your lab mates are working on) it will make it feel like a lab community, rather than a bunch of people collaborating one-on-one with the PI. One of the forums where we can learn about each other's work is in weekly lab meetings. These lab meetings will be approximately 1 hour and may involve a group project troubleshoot (\textasciitilde15-30 minutes), and a goal blitz for the week or month ahead (\textless5 minutes per person) at the start of the meeting. For the remaining time in the lab meeting, we will have different approaches depending on the amount of data and the stage of current projects. To begin with, while the Mind, Brain Body study is getting setup, one option (Thematic Learning option) is to define an area of interest that the lab wants to learn more about at the start of the term, and then have lab members present on articles on their choosing that focus on the agreed-upon themes in a journal club style. When the lab has some data to work on, we might begin to transition to a mix of Thematic Learning and Works in Progress. Works in Progress simply means that students take time to present their analyses or projects.
 
 The group project troubleshoot will involve us working through problems that relate to the large group project (at this stage, the large group project is the Mind, Brain, Body project, funded through Bridget's R00). As all lab members contribute to data collection for that project, we will talk about procedural issues like recruitment, planning the next wave of data collection etc. Troubleshooting for smaller individual projects will occur during one-and-one meetings with the PI (see below) and during the WIP session.
 
@@ -638,134 +644,101 @@ In the table below, we have listed the studies in the lab.
 
 If you are writing a paper on one of these studies, you will need to cite the Parent Grant/s used for that study (you should also ask your collaborators if they have any fellowships that they would like listed).
 
-\begin{longtable}[]{@{}lllll@{}}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.4493}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2174}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1304}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1014}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1014}}@{}}
 \toprule
-\begin{minipage}[b]{0.39\columnwidth}\raggedright
-Study Name\strut
-\end{minipage} & \begin{minipage}[b]{0.19\columnwidth}\raggedright
-Parent Grant(s)\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright
-IRB \#\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedright
-Status\strut
-\end{minipage} & \begin{minipage}[b]{0.09\columnwidth}\raggedright
-Wiki\strut
-\end{minipage}\tabularnewline
+\begin{minipage}[b]{\linewidth}\raggedright
+Study Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Parent Grant(s)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+IRB \#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Wiki
+\end{minipage} \\
 \midrule
 \endhead
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Mind, Brain, Body (MBB) - The Mind, Brain, Body study looks at how early caregiving experiences influence emotional, cognitive, and brain development, as well as physical health and wellness.\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-NIMH R00\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-19-001217\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Ongoing\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-\href{https://bablab.github.io/wiki_mind_brain_body/}{wiki}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Parenting Under Pressure (PUP) - This study seeks to explore the ways in which the COVID-19 outbreak has specifically influenced caregivers, children, and families.\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-Startup\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-20-000735\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Closed to Enrollment\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-\href{https://bablab.github.io/wiki_parenting_under_pressure/}{wiki}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Inside Out - The purpose of this two-part study is to explore the relationship between somatic symptoms and emotions in adults.\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-Startup\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-20-000295\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Data Analysis\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-\href{https://bablab.github.io/wiki_inside_out/}{wiki}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Transfer Mental Health - This study explores the relationship between being a transfer student and subsequent mental health outcomes.\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-PROPS\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-19-002273\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Closed to Enrollment\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-\href{https://bablab.github.io/wiki_transfer_mental_health/}{wiki}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Stress \& Early Childhood Microbiome Development - This study helps understand how conditions in pregnancy and early childhood influence the health and development of women and children, as well as .\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-\href{http://www.gusto.sg/}{GUSTO Study}\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
------\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Data Analysis\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-\href{https://bablab.github.io/wiki_gusto/}{wiki}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Call4Growth - This study explores the role of a sense of vocational calling as manifested by military service in the IDF in fostering growth in adults, particularly those who have experienced childhood\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-PROPS\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-20-001988\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Ongoing\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
------\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Memory Plasticity\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-Bridget Postdoc Study\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-20-001310\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-DUA Columbia University\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
--------\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Categorical Memory Retention in Adulthood\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-Bridget Postdoc Study\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-20-007101\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-Ongoing\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
--------\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Emotional Learning for Kids\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-Bridget Postdoc Study\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-19-002284\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-DUA Columbia University\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
--------\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.39\columnwidth}\raggedright
-Emotional Eavesdropping in Toddlers\strut
-\end{minipage} & \begin{minipage}[t]{0.19\columnwidth}\raggedright
-Bridget Postdoc Study\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright
-20-000002\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
-DUA Columbia University\strut
-\end{minipage} & \begin{minipage}[t]{0.09\columnwidth}\raggedright
--------\strut
-\end{minipage}\tabularnewline
+Mind, Brain, Body (MBB) - The Mind, Brain, Body study looks at how early caregiving experiences influence emotional, cognitive, and brain development, as well as physical health and wellness. & NIMH R00 & 19-001217 & Ongoing & \href{https://bablab.github.io/wiki_mind_brain_body/}{wiki} \\
+Parenting Under Pressure (PUP) - This study seeks to explore the ways in which the COVID-19 outbreak has specifically influenced caregivers, children, and families. & Startup & 20-000735 & Closed to Enrollment & \href{https://bablab.github.io/wiki_parenting_under_pressure/}{wiki} \\
+Inside Out - The purpose of this two-part study is to explore the relationship between somatic symptoms and emotions in adults. & Startup & 20-000295 & Data Analysis & \href{https://bablab.github.io/wiki_inside_out/}{wiki} \\
+Transfer Mental Health - This study explores the relationship between being a transfer student and subsequent mental health outcomes. & PROPS & 19-002273 & Closed to Enrollment & \href{https://bablab.github.io/wiki_transfer_mental_health/}{wiki} \\
+Stress \& Early Childhood Microbiome Development - This study helps understand how conditions in pregnancy and early childhood influence the health and development of women and children, as well as . & \href{http://www.gusto.sg/}{GUSTO Study} & ----- & Data Analysis & \href{https://bablab.github.io/wiki_gusto/}{wiki} \\
+Call4Growth - This study explores the role of a sense of vocational calling as manifested by military service in the IDF in fostering growth in adults, particularly those who have experienced childhood & PROPS & 20-001988 & Ongoing & ----- \\
+Memory Plasticity & Bridget Postdoc Study & 20-001310 & DUA Columbia University & ------- \\
+Categorical Memory Retention in Adulthood & Bridget Postdoc Study & 20-007101 & Ongoing & ------- \\
+Emotional Learning for Kids & Bridget Postdoc Study & 19-002284 & DUA Columbia University & ------- \\
+Emotional Eavesdropping in Toddlers & Bridget Postdoc Study & 20-000002 & DUA Columbia University & ------- \\
 \bottomrule
 \end{longtable}
 
-\bibliography{book.bib,packages.bib}
+\hypertarget{helpful-information}{%
+\chapter{Helpful Information}\label{helpful-information}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{graduate-students-1}{%
+\section{Graduate Students}\label{graduate-students-1}}
+
+\hypertarget{fellowships}{%
+\subsection{Fellowships}\label{fellowships}}
+
+Here is a list of fellowships that lab members recommend applying to:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.nsfgrfp.org/}{NSF GRFP}: apply in 1st or 2nd year of graduate school, deadline is typically early October. Provides 3 years of funding with an annual stipend \textasciitilde\$37k.
+\item
+  \href{https://grad.ucla.edu/asis/stusup/gradsupport.pdf}{UCLA Fellowships}: funding time frame and amount varies, eligibility criteria varies; consult the link for specifics on each fellowship. Fellowships graduate students have won in the past (so that you can reach out to that person for example materials) include:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Graduate Division Privately Endowed Fellowships: Faculty Women's Club Scholarship (Fran; \$3k).
+  \item
+    Graduate Summer Research Mentorship Program (GSRM; Fran \& Naomi; \$6k for summer)
+  \item
+    Graduate Research Mentorship Program (GRM; Fran \& Naomi; \$20k + tuition for academic year)
+  \end{itemize}
+\item
+  \href{https://www.nia.nih.gov/research/training/f31-individual-fellowships-phd-students}{NIH F31 NRSA}: apply in 3rd or 4th year, 3 different deadlines (April 8, August 8, December 8). Students typically propose 2-3 years of funding, yearly stipend is \textasciitilde\$26k.
+\end{itemize}
+
+\hypertarget{conferences}{%
+\subsection{Conferences}\label{conferences}}
+
+Conferences are a great way to practice presenting your work and meet new people in your area of interest! Below is a list of conferences that lab members frequently attend, how often the conference happens, the typical abstract deadline, and the typical month when the conference is held.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1579}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1447}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3553}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3421}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Conference
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequency
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Approx. Abstract Deadline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Approx. Conference Month
+\end{minipage} \\
+\midrule
+\endhead
+SRCD & Biennial & September & March \\
+ISDP & Annual & August & November \\
+SAS & Annual & November & March-April \\
+Flux & Annual & March & September \\
+\bottomrule
+\end{longtable}
+
+  \bibliography{book.bib,packages.bib}
 
 \end{document}

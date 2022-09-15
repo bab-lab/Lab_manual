@@ -8,9 +8,9 @@ principal-investigator
 post-docs
 graduate-students
 lab-managers
-senior-research-assistants
 enrolled-research-interns
 research-assistants
+senior-research-assistants
 code-of-conduct
 essential-policies
 scientific-integrity
@@ -29,3 +29,7 @@ recommendation-letters
 open-science
 funding
 studies
+helpful-information
+graduate-students-1
+fellowships
+conferences
